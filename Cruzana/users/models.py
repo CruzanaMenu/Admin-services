@@ -3,7 +3,7 @@ from django.db import models
 class Customer(models.Model):
     class Gender(models.TextChoices):
         male = "Masculino"
-        female = "Femenino"
+        female = "Femenino" 
 
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=40)
@@ -16,3 +16,17 @@ class Customer(models.Model):
 
     def __str__(self):
         return self.first_name
+
+class Food(models.Model):
+
+    name_food = models.CharField(max_lenght=30)
+    desc_small = models.CharField(max_length=70)
+    desc_large = models.CharField(max_length=120)
+    desc_full = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name_food
+
+
+
+    
