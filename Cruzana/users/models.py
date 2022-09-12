@@ -1,3 +1,5 @@
+from pickle import FALSE
+from unittest.util import _MAX_LENGTH
 from django.db import models
 
 class Customer(models.Model):
@@ -17,16 +19,30 @@ class Customer(models.Model):
     def __str__(self):
         return self.first_name
 
-class Food(models.Model):
+class Comida(models.Model):
 
     name_food = models.CharField(max_lenght=30)
     desc_small = models.CharField(max_length=70)
     desc_large = models.CharField(max_length=120)
     desc_full = models.CharField(max_length=200)
+    price = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name_food
 
+class Bebidas(models.Model):
+    
+    name_bebida = models.CharField(max_length=30)
+    desc_bebida = models.CharField(max_length=50, null=FALSE)
+    price = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.name_bebida
+
+class Pedidos(models.Model):
+
+    date_pedido = models.DateField("date published")
+    
 
 
     
