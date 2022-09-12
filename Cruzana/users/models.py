@@ -21,7 +21,7 @@ class Customer(models.Model):
 
 class Comida(models.Model):
 
-    name_food = models.CharField(max_lenght=30)
+    name_food = models.CharField(max_length=30)
     desc_small = models.CharField(max_length=70)
     desc_large = models.CharField(max_length=120)
     desc_full = models.CharField(max_length=200)
@@ -30,7 +30,7 @@ class Comida(models.Model):
     def __str__(self):
         return self.name_food
 
-class Bebidas(models.Model):
+class Bebida(models.Model):
     
     name_bebida = models.CharField(max_length=30)
     desc_bebida = models.CharField(max_length=50, null=FALSE)
@@ -39,10 +39,10 @@ class Bebidas(models.Model):
     def __str__(self):
         return self.name_bebida
 
-class Pedidos(models.Model):
+class Pedido(models.Model):
 
     date_pedido = models.DateField("date published")
-    
+
 
 
     
